@@ -1,0 +1,46 @@
+.profile__info {
+  background-color: white;
+  border: 1px solid #e6e6e6;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 30px;
+  min-height: 304px;
+}
+.profile__info-container {
+  align-self: center;
+  text-align: center;
+  max-width: 330px;
+}
+.profile__info-title {
+  color: #184b8f;
+  font-family: 'SolomonLight', sans-serif;
+  font-size: 26px;
+  margin-top: 0;
+  text-transform: capitalize;
+}
+.profile__info-description {
+  color: #6e6e6e;
+  font-family: 'SolomonNormal', sans-serif;
+  line-height: 23px;
+  word-break: break-word;
+}
+.profile__info-action {
+  margin-top: 28px;
+}
+.profile__info-button {
+  background-color: red;
+  border: 0;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+  font-family: 'SolomonBold', sans-serif;
+  font-size: 14px;
+  height: 50px;
+  text-transform: uppercase;
+  width: 165px;
+}
+.profile__info-button:focus {
+  outline: 0;
+}

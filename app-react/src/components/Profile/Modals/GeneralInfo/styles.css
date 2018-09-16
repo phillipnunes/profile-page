@@ -1,0 +1,114 @@
+.profile__modal.wrapper {
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  left: 0;
+  overflow-y: scroll;
+  position: fixed;
+  right: 0;
+  top: 0;
+  visibility: hidden;
+  z-index: 9999;
+}
+@media screen and (min-width: 767px) { /* Media Rule */
+  .profile__modal.wrapper {
+    overflow-y: hidden;
+  }
+}
+
+.profile__modal.is-active {
+  background-color: rgba(0, 0, 0, 0.5);
+  transition: all .3s linear;
+  visibility: visible;
+}
+.profile__modal.is-active .profile__modal-container {
+  margin-top: 0;
+  transition: all .3s linear;
+}
+.profile__modal-container {
+  align-self: center;
+  background-color: white;
+  border-radius: 5px;
+  margin-top: -100%;
+  padding: 37px 0;
+  width: 98%;
+  position: relative;
+}
+@media screen and (min-width: 440px) { /* Media Rule */
+  .profile__modal-container {
+    padding: 37px 0 60px;
+    width: 440px;
+  }
+}
+.profile__modal-close {
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  height: 13px;
+  justify-content: space-between;
+  position: absolute;
+  right: 24px;
+  top: 30px;
+  width: 19px;
+}
+.profile__modal-close-item {
+  width: 100%;
+  height: 1px;
+  display: block;
+  background-color: #6e6e6e;
+  transform-origin: 1px;
+}
+.profile__modal-close-item:nth-child(1) {
+  transform: rotate(45deg);
+}
+.profile__modal-close-item:nth-child(2) {
+  transform: rotate(-45deg);
+}
+.profile__modal-content {
+  margin: 0 auto;
+  max-width: 310px;
+  text-align: center;
+}
+.profile__modal-title {
+  color: #6e6e6e;
+  font-family: 'SolomonNormal', sans-serif;
+  font-size: 30px;
+  text-transform: capitalize;
+}
+.profile__modal-description {
+  color: #6e6e6e;
+  font-family: 'SolomonNormal', sans-serif;
+  font-size: 16px;
+  line-height: 23px;
+}
+.profile__modal-notes {
+  border: 1px solid #e6e6e6;
+  color: #6e6e6e;
+  font-family: 'SolomonNormal', sans-serif;
+  font-size: 16px;
+  margin-top: 35px;
+  padding: 15px 0 0 13px;
+  resize: none;
+  width: 295px;
+}
+.profile__modal-notes:focus {
+  outline-color: #6e6e6e;
+}
+.profile__modal-action {
+  margin-top: 25px;
+}
+.profile__modal-button {
+  background-color: red;
+  border: 0;
+  border-radius: 27px;
+  color: white;
+  cursor: pointer;
+  font-family: 'SolomonBold', sans-serif;
+  font-size: 16px;
+  height: 54px;
+  text-transform: uppercase;
+  width: 100%;
+}
+.profile__modal-button:focus {
+  outline: 0;
+}

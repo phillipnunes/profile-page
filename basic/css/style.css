@@ -1,0 +1,392 @@
+/* Registering fonts */
+@font-face {
+  font-family: SolomonLight;
+  src: url("../fonts/Solomon-Sans-Light.woff") format("woff"),
+       url("../fonts/Solomon-Sans-Light.ttf")  format("truetype");
+}
+@font-face {
+  font-family: SolomonNormal;
+  src: url("../fonts/Solomon-Sans-Normal.woff") format("woff"),
+       url("../fonts/Solomon-Sans-Normal.ttf")  format("truetype");
+}
+@font-face {
+  font-family: SolomonSemiBold;
+  src: url("../fonts/Solomon-Sans-SemiBold.woff") format("woff"),
+       url("../fonts/Solomon-Sans-SemiBold.ttf")  format("truetype");
+}
+@font-face {
+  font-family: SolomonBold;
+  src: url("../fonts/Solomon-Sans-Bold.woff") format("woff"),
+       url("../fonts/Solomon-Sans-Bold.ttf")  format("truetype");
+}
+@font-face {
+  font-family: TonicSmallCaps;
+  src: url("../fonts/Tonic-SmallCaps.woff") format("woff"),
+       url("../fonts/Tonic-SmallCaps.ttf")  format("truetype");
+}
+
+/* General */
+body {
+  background-color: #fbfbfb;
+  margin: 0 auto;
+  max-width: 1920px;
+  min-width: 320px;
+}
+.container {
+  margin: 0 auto;
+  width: 90%;
+}
+@media screen and (min-width: 767px) { /* Media Rule */
+  .container {
+    width: 70%;
+  }
+}
+@media screen and (min-width: 992px) { /* Media Rule */
+  .container {
+    max-width: 860px;
+    width: 100%;
+  }
+}
+/* /General */
+
+/* Header */
+.header {
+  background-color: white;
+  display: flex;
+  justify-content: flex-end;
+  height: 60px;
+}
+.header__menu {
+  background-color: #ededee;
+  height: 100%;
+  position: fixed;
+  transform: translateX(200px);
+  top: 0;
+  transition: all .2s linear;
+  width: 200px;
+}
+.header__menu.is-active {
+  transform: translateX(0);
+}
+@media screen and (min-width: 767px) { /* Media Rule */
+  .header__menu {
+    align-self: center;
+    background-color: transparent;
+    height: auto;
+    padding-right: 30px;
+    position: relative;
+    top: auto;
+    transform: unset;
+    width: auto;
+  }
+}
+.header__menu-items {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  margin: 30px 25px 0;
+  padding: 0;
+  text-align: center;
+}
+@media screen and (min-width: 767px) { /* Media Rule */
+  .header__menu-items {
+    flex-direction: row;
+    margin: 0;
+    text-align: left;
+  }
+}
+.header__menu-item {
+  margin-bottom: 10px;
+}
+@media screen and (min-width: 767px) { /* Media Rule */
+  .header__menu-item {
+    margin-right: 20px;
+    margin-bottom: 0;
+  }
+}
+.header__menu-link {
+  color: #6e6e6e;
+  font-family: 'TonicSmallCaps', sans-serif;
+  font-size: 20px;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+@media screen and (min-width: 767px) { /* Media Rule */
+  .header__menu-link {
+    font-size: 16px;
+  }
+}
+
+.header__burger-button {
+  cursor: pointer;
+  display: flex;
+  flex-flow: column;
+  height: 25px;
+  justify-content: space-between;
+  position: absolute;
+  transform: translateX(-20px);
+  top: 15px;
+  transition: all .2s linear;
+  width: 30px;
+}
+.header__burger-button.is-active {
+  position: fixed;
+  transform: translateX(-210px);
+}
+.header__burger-button.is-active
+.header__burger-item:nth-child(1) {
+  transform: rotate(45deg);
+  transform-origin: 1px;
+}
+.header__burger-button.is-active
+.header__burger-item:nth-child(2) {
+  margin-right: 30px;
+}
+.header__burger-button.is-active
+.header__burger-item:nth-child(3) {
+  transform: rotate(-45deg);
+  transform-origin: 1px;
+}
+@media only screen and (min-width: 767px) {
+  .header__burger-button {
+    display: none;
+  }
+}
+.header__burger-item {
+  background: black;
+  border-radius: 15px;
+  height: 5px;
+  transition: all .2s linear;
+}
+/* /Header */
+
+
+/* Profile */
+.profile {
+  margin: 10px auto 30px;
+}
+@media screen and (min-width: 767px) { /* Media Rule */
+  .profile {
+    margin-top: 65px;
+  }
+}
+.profile__title {
+  color: black;
+  font-family: 'SolomonSemiBold', sans-serif;
+  margin: 0;
+  text-align: center;
+}
+.profile__progress {
+  margin-top: 57px;
+}
+.profile__progress-box {
+  background-color: #ededee;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 190px;
+  padding: 0 15px;
+}
+.profile__progress-container {
+  align-self: center;
+  width: 100%;
+}
+@media screen and (min-width: 576px) { /* Media Rule */
+  .profile__progress-container {
+    width: 340px;
+  }
+}
+.profile__progress-content {
+  color: black;
+  font-family: 'SolomonSemiBold', sans-serif;
+  font-size: 15px;
+}
+.profile__progress-bar {
+  background-color: white;
+  border-radius: 15px;
+  margin-top: 5px;
+  width: 100%
+}
+.profile__progress-bar-element {
+  background-color: red;
+  border-radius: 15px;
+  display: block;
+  height: 9px;
+  max-width: 100%;
+  position: relative;
+}
+.profile__progress-description {
+  align-self: center;
+  color: black;
+  font-family: 'SolomonNormal', sans-serif;
+  font-size: 14px;
+  margin: 20px 0 0;
+}
+/* /Profile */
+
+/* Profile Infos */
+.profile__info {
+  background-color: white;
+  border: 1px solid #e6e6e6;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 30px;
+  min-height: 304px;
+}
+.profile__info-container {
+  align-self: center;
+  text-align: center;
+  max-width: 330px;
+}
+.profile__info-title {
+  color: #184b8f;
+  font-family: 'SolomonLight', sans-serif;
+  font-size: 26px;
+  margin-top: 0;
+  text-transform: capitalize;
+}
+.profile__info-description {
+  color: #6e6e6e;
+  font-family: 'SolomonNormal', sans-serif;
+  line-height: 23px;
+  word-break: break-word;
+}
+.profile__info-action {
+  margin-top: 28px;
+}
+.profile__info-button {
+  background-color: red;
+  border: 0;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+  font-family: 'SolomonBold', sans-serif;
+  font-size: 14px;
+  height: 50px;
+  text-transform: uppercase;
+  width: 165px;
+}
+.profile__info-button:focus {
+  outline: 0;
+}
+/* /Profile Infos */
+
+/* Profile modal */
+.profile__modal.wrapper {
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  left: 0;
+  overflow-y: scroll;
+  position: fixed;
+  right: 0;
+  top: 0;
+  visibility: hidden;
+  z-index: 9999;
+}
+@media screen and (min-width: 767px) { /* Media Rule */
+  .profile__modal.wrapper {
+    overflow-y: hidden;
+  }
+}
+
+.profile__modal.is-active {
+  background-color: rgba(0, 0, 0, 0.5);
+  transition: all .3s linear;
+  visibility: visible;
+}
+.profile__modal.is-active .profile__modal-container {
+  margin-top: 0;
+  transition: all .3s linear;
+}
+.profile__modal-container {
+  align-self: center;
+  background-color: white;
+  border-radius: 5px;
+  margin-top: -100%;
+  padding: 37px 0;
+  width: 98%;
+  position: relative;
+}
+@media screen and (min-width: 440px) { /* Media Rule */
+  .profile__modal-container {
+    padding: 37px 0 60px;
+    width: 440px;
+  }
+}
+.profile__modal-close {
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  height: 13px;
+  justify-content: space-between;
+  position: absolute;
+  right: 24px;
+  top: 30px;
+  width: 19px;
+}
+.profile__modal-close-item {
+  width: 100%;
+  height: 1px;
+  display: block;
+  background-color: #6e6e6e;
+  transform-origin: 1px;
+}
+.profile__modal-close-item:nth-child(1) {
+  transform: rotate(45deg);
+}
+.profile__modal-close-item:nth-child(2) {
+  transform: rotate(-45deg);
+}
+.profile__modal-content {
+  margin: 0 auto;
+  max-width: 310px;
+  text-align: center;
+}
+.profile__modal-title {
+  color: #6e6e6e;
+  font-family: 'SolomonNormal', sans-serif;
+  font-size: 30px;
+  text-transform: capitalize;
+}
+.profile__modal-description {
+  color: #6e6e6e;
+  font-family: 'SolomonNormal', sans-serif;
+  font-size: 16px;
+  line-height: 23px;
+}
+.profile__modal-notes {
+  border: 1px solid #e6e6e6;
+  color: #6e6e6e;
+  font-family: 'SolomonNormal', sans-serif;
+  font-size: 16px;
+  margin-top: 35px;
+  padding: 15px 0 0 13px;
+  resize: none;
+  width: 295px;
+}
+.profile__modal-notes:focus {
+  outline-color: #6e6e6e;
+}
+.profile__modal-action {
+  margin-top: 25px;
+}
+.profile__modal-button {
+  background-color: red;
+  border: 0;
+  border-radius: 27px;
+  color: white;
+  cursor: pointer;
+  font-family: 'SolomonBold', sans-serif;
+  font-size: 16px;
+  height: 54px;
+  text-transform: uppercase;
+  width: 100%;
+}
+.profile__modal-button:focus {
+  outline: 0;
+}
+/* /Profile modal */

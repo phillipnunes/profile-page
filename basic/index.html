@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <!-- CSS Normalize -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css" />
+  <link rel="stylesheet" href="./css/style.css" />
+
+  <title>Profile Page</title>
+</head>
+<body>
+  <header class="header">
+    <div class="header__menu" id="header_menu">
+      <ul class="header__menu-items">
+        <li class="header__menu-item">
+          <a class="header__menu-link" href="#">my dashboard</a>
+        </li>
+        <li class="header__menu-item">
+          <a class="header__menu-link" href="#">jobs</a>
+        </li>
+        <li class="header__menu-item">
+          <a class="header__menu-link" href="#">companies</a>
+        </li>
+        <li class="header__menu-item">
+          <a class="header__menu-link" href="#">inside look</a>
+        </li>
+        <li class="header__menu-item">
+          <a class="header__menu-link" href="#">how it works</a>
+        </li>
+        <li class="header__menu-item">
+          <a class="header__menu-link" href="#">for employers</a>
+        </li>
+      </ul>
+    </div>
+    <div class="header__burger-button" id="burger_menu_button">
+      <span class="header__burger-item"></span>
+      <span class="header__burger-item"></span>
+      <span class="header__burger-item"></span>
+    </div>
+  </header>
+  <main class="profile container">
+    <h1 class="profile__title">My Profile</h1>
+    <section class="profile__progress">
+      <div class="profile__progress-box">
+        <div class="profile__progress-container">
+          <div class="profile__progress-content">
+            <span class="profile__progress-title">Progress:</span>
+            <span class="profile__progress-percent">30%</span>
+          </div>
+          <div class="profile__progress-bar">
+            <span style="width: 30%;" class="profile__progress-bar-element"></span>
+          </div>
+        </div>
+        <p class="profile__progress-description">
+          Complete 60% to apply for jobs  and let companies know you're interested
+        </p>
+      </div>
+    </section>
+    <section class="profile__info">
+      <div class="profile__info-container">
+        <h2 class="profile__info-title">introduction</h2>
+        <p class="profile__info-description" id="profile_info_description">
+          Take a brief moment to introduce yourself and increase your Profile strenght by 25%
+        </p>
+        <div class="profile__info-action">
+          <button class="profile__info-button" id="introduction_button">add</button>
+        </div>
+      </div>
+    </section>
+    <section class="profile__info">
+      <div class="profile__info-container">
+        <h2 class="profile__info-title">experience</h2>
+        <p class="profile__info-description">
+          Add your experience to increase your Profile strenght by 25%
+        </p>
+        <div class="profile__info-action">
+          <button class="profile__info-button" id="experience">add</button>
+        </div>
+      </div>
+    </section>
+    <section class="profile__info">
+      <div class="profile__info-container">
+        <h2 class="profile__info-title">education</h2>
+        <p class="profile__info-description">
+          Add your education to increase your Profile strenght by 50%
+        </p>
+        <div class="profile__info-action">
+          <button class="profile__info-button" id="education">add</button>
+        </div>
+      </div>
+    </section>
+
+    <div class="profile__modal wrapper" id="profile_modal">
+      <div class="profile__modal-container">
+        <div class="profile__modal-close" id="profile_modal_close">
+          <span class="profile__modal-close-item"></span>
+          <span class="profile__modal-close-item"></span>
+        </div>
+        <div class="profile__modal-content">
+          <p class="profile__modal-title">introduce yourself</p>
+          <p class="profile__modal-description">
+            Add a small introduction about yourself, outlining your career to date, and the career path that you would like to take.
+          </p>
+          <p class="profile__modal-description">
+            Showcase your strenght and values, along with your personality.
+          </p>
+          <textarea
+            class="profile__modal-notes"
+            id="profile_modal_notes"
+            maxlength="210"
+            name="notes"
+            placeholder="Notes"
+            required
+            rows="8"></textarea>
+          <div class="profile__modal-action">
+            <button class="profile__modal-button" id="profile_modal_button">save</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    const menuButton = document.querySelector('#burger_menu_button'); //Burger menu button
+    const menu = document.querySelector('#header_menu'); // Menu
+    function listenerToggleBurgerMenu() {
+      menuButton.addEventListener('click', function(){
+        menu.classList.toggle('is-active');
+        this.classList.toggle('is-active');
+      });
+    }
+
+    const introductionButton = document.querySelector('#introduction_button'); // Button from section introduction
+    const closeModalButton = document.querySelector('#profile_modal_close'); // Close button
+    const modal = document.querySelector('#profile_modal');  // Modal
+    function listenerToggleModal() {
+      introductionButton.addEventListener('click', function(){
+        modal.classList.toggle('is-active');
+      });
+      closeModalButton.addEventListener('click', function(){
+        modal.classList.toggle('is-active');
+      });
+    }
+
+    const modalButton = document.querySelector('#profile_modal_button'); // Modal action button
+    const profileDescription = document.querySelector('#profile_info_description');
+    const modalTextarea = document.querySelector('#profile_modal_notes');
+    function listenerSaveIntroductionData() {
+      modalButton.addEventListener('click', function(){
+        profileDescription.textContent = modalTextarea.value;
+        modalTextarea.value = '';
+        modal.classList.toggle('is-active');
+      });
+    }
+
+    ;(function initEvents() {
+      listenerToggleBurgerMenu();
+      listenerToggleModal();
+      listenerSaveIntroductionData();
+    })();
+  </script>
+</body>
+</html>

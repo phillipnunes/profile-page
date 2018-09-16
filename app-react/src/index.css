@@ -1,0 +1,48 @@
+/* Registering fonts */
+@font-face {
+  font-family: SolomonLight;
+  src: url("./fonts/Solomon-Sans-Light.woff") format("woff"),
+       url("./fonts/Solomon-Sans-Light.ttf")  format("truetype");
+}
+@font-face {
+  font-family: SolomonNormal;
+  src: url("./fonts/Solomon-Sans-Normal.woff") format("woff"),
+       url("./fonts/Solomon-Sans-Normal.ttf")  format("truetype");
+}
+@font-face {
+  font-family: SolomonSemiBold;
+  src: url("./fonts/Solomon-Sans-SemiBold.woff") format("woff"),
+       url("./fonts/Solomon-Sans-SemiBold.ttf")  format("truetype");
+}
+@font-face {
+  font-family: SolomonBold;
+  src: url("./fonts/Solomon-Sans-Bold.woff") format("woff"),
+       url("./fonts/Solomon-Sans-Bold.ttf")  format("truetype");
+}
+@font-face {
+  font-family: TonicSmallCaps;
+  src: url("./fonts/Tonic-SmallCaps.woff") format("woff"),
+       url("./fonts/Tonic-SmallCaps.ttf")  format("truetype");
+}
+
+body {
+  background-color: #fbfbfb;
+  margin: 0 auto;
+  max-width: 1920px;
+  min-width: 320px;
+}
+.container {
+  margin: 0 auto;
+  width: 90%;
+}
+@media screen and (min-width: 767px) { /* Media Rule */
+  .container {
+    width: 70%;
+  }
+}
+@media screen and (min-width: 992px) { /* Media Rule */
+  .container {
+    max-width: 860px;
+    width: 100%;
+  }
+}

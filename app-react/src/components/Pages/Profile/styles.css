@@ -1,0 +1,14 @@
+.profile {
+  margin: 10px auto 30px;
+}
+@media screen and (min-width: 767px) { /* Media Rule */
+  .profile {
+    margin-top: 65px;
+  }
+}
+.profile__title {
+  color: black;
+  font-family: 'SolomonSemiBold', sans-serif;
+  margin: 0;
+  text-align: center;
+}
