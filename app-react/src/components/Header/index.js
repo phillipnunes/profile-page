@@ -2,10 +2,17 @@ import React, { Component } from 'react'
 import './styles.css'
 
 export default class Header extends Component {
+  state = {
+    isActive: false
+  }
+  toggleBurgerMenu = () => {
+    this.setState({ isActive: !this.state.isActive})
+  }
   render() {
+    const { isActive } = this.state
     return(
       <header className="header">
-        <div className="header__menu" id="header_menu">
+        <div className={`header__menu ${isActive ? 'is-active' : ''}`}>
           <ul className="header__menu-items">
             <li className="header__menu-item">
               <a className="header__menu-link" href="!#">my dashboard</a>
@@ -27,7 +34,7 @@ export default class Header extends Component {
             </li>
           </ul>
         </div>
-        <div className="header__burger-button" id="burger_menu_button">
+        <div onClick={this.toggleBurgerMenu} className={`header__burger-button ${isActive ? 'is-active' : ''}`}>
           <span className="header__burger-item"></span>
           <span className="header__burger-item"></span>
           <span className="header__burger-item"></span>
