@@ -75,7 +75,7 @@ body {
     padding-right: 30px;
     position: relative;
     top: auto;
-    transform: unset;
+    transform: translateX(0);
     width: auto;
   }
 }
@@ -183,8 +183,11 @@ body {
   border-radius: 5px;
   display: flex;
   flex-direction: column;
+  height: 190px;
   justify-content: center;
-  min-height: 190px;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 860px;
   padding: 0 15px;
 }
 .profile__progress-container {
@@ -232,8 +235,11 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
   margin-top: 30px;
-  min-height: 304px;
+  max-width: 860px;
+  height: 304px;
 }
 .profile__info-container {
   align-self: center;

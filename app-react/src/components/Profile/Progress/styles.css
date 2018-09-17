@@ -6,8 +6,11 @@
   border-radius: 5px;
   display: flex;
   flex-direction: column;
+  height: 190px;
   justify-content: center;
-  min-height: 190px;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 860px;
   padding: 0 15px;
 }
 .profile__progress-container {
