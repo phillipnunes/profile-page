@@ -1,5 +1,6 @@
 # Profile Page  :rocket::rocket:
 Project created for an interview. It is a profile page with modal.
+
 Check this online preview hosted in GH Pages:
 https://phillipnunes.github.io/profile-page/basic/
 
